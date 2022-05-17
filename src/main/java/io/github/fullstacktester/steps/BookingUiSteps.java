@@ -123,6 +123,9 @@ public class BookingUiSteps {
     public void canSeeCostOfCots(int numberOfCots) {
         assertThat(optionalExtrasPage.getCotSummaryPrice())
                 .isEqualTo(1500 * numberOfCots);
+
+        assertThat(optionalExtrasPage.getTotalCostInPence())
+                .isEqualTo(booking.baseCostinPence + (1500 * numberOfCots));
     }
 
     @Step
@@ -134,6 +137,9 @@ public class BookingUiSteps {
     public void canSeeCostOfHighChairs(int numberOfHighChairs) {
         assertThat(optionalExtrasPage.getHighChairSummaryPrice())
                 .isEqualTo(1500 * numberOfHighChairs);
+
+        assertThat(optionalExtrasPage.getTotalCostInPence())
+                .isEqualTo(booking.baseCostinPence + (1500 * numberOfHighChairs));
     }
 
     @Step
@@ -145,6 +151,9 @@ public class BookingUiSteps {
     public void canSeeCostOfCancellationCover() {
         assertThat(optionalExtrasPage.getCancellationCoverSummaryPrice())
                 .isEqualTo(2500);
+
+        assertThat(optionalExtrasPage.getTotalCostInPence())
+                .isEqualTo(booking.baseCostinPence + 2500);
     }
 
     @Step
@@ -156,5 +165,8 @@ public class BookingUiSteps {
     public void canSeeCostOfPriorityArrival() {
         assertThat(optionalExtrasPage.getPriorityArrivalSummaryPrice())
                 .isEqualTo(5000);
+
+        assertThat(optionalExtrasPage.getTotalCostInPence())
+                .isEqualTo(booking.baseCostinPence + 5000);
     }
 }
