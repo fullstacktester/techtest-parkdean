@@ -26,4 +26,15 @@ public class CreateBookingFeature {
         assertThat(driver.getCurrentUrl())
                 .isEqualTo("https://www.parkdeanresorts.co.uk/");
     }
+
+    @Test
+    public void CanFilterHolidaysOnHomePage() {
+        user.isOnTheHomePage();
+
+        user.filtersTheAccommodation();
+
+        user.selectsAnAccommodation();
+
+        user.hasBookedAccommodation();
+    }
 }

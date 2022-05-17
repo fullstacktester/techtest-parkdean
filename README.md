@@ -7,6 +7,10 @@ This project is written in Java and the tests can be run via the command:
 
 This requires a working java environment locally. The tests have been written to work with Java 8 to keep things simple as no modern Java features were required.
 
+The tests are currently set up to run in parallel in 2 threads. This can be amended in the pom.xml.
+
+For CI running, the tests can be run in headless mode by amending the serenity.properties file.
+
 ## Frameworks Used
 The main framework used is Serenity BDD (https://github.com/serenity-bdd/serenity-core)
 
